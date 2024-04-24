@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Capacitor Plugins
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar debounce="1000" [(ngModel)]="search" (ionInput)="filter()"
+      placeholder="Search for plugins"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    @for (plugin of plugins; track plugin.name) {
+    <ion-item>{{plugin.name}}
+      <ion-note slot="end">
+        @for (item of plugin.notes; track item) {
+        <ion-badge [class]="'badge-'+item">{{item}}</ion-badge>
+        }
+      </ion-note>
+    </ion-item>
+    }
+  </ion-list>
+</ion-content>

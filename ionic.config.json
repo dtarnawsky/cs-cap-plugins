@@ -1,0 +1,7 @@
+{
+  "name": "cs-plugin-explore",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
